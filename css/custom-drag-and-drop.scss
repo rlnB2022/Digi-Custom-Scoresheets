@@ -9,6 +9,11 @@ body {
 	width: 100vw;
 }
 
+.scoresheet {
+	height: 100dvh;
+	overflow-y: hidden;
+}
+
 .text-small {
 	font-size: 0.8rem;
 }
@@ -17,7 +22,21 @@ body {
 	cursor: pointer;
 }
 
-#scoreboard {
+.header-row {
+	font-size: 0.75rem;
+	font-weight: 700;
+}
+
+.spacer {
+	height: 0.5rem;
+}
+
+#scoreboard,
+#lineup-visitor,
+#lineup-home,
+#pitchers,
+#pitcher-visitor,
+#pitcher-home {
 	/* To indicate that the scoreboard can be dragged */
 	&:hover {
 		border-color: red !important;

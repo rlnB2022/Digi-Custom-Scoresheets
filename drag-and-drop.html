@@ -24,50 +24,61 @@
 		<title>DigiDugout - Custom Scoresheet</title>
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container-fluid scoresheet">
 			<div class="row">
 				<div class="col-9">
+					<div class="spacer"></div>
 					<div
 						id="scoreboard"
 						class="container border border-black border-2 cursor"
 						title="Drag scoreboard to a new location on the scoresheet"
 					>
-						<div class="row border-bottom border-2 border-black">
+						<div
+							class="row border-bottom border-2 border-black header-row bg-dark-subtle"
+						>
 							<div class="col-4 text-center border-black border-2 border-end">
 								GAME DATE
 							</div>
-							<div class="col text-center border-end border-dark-subtle">1</div>
-							<div class="col text-center">2</div>
-							<div
-								class="col text-center border-start border-end border-dark-subtle"
-							>
+							<div class="col text-center">1</div>
+							<div class="col text-center border-start border-dark-subtle">
+								2
+							</div>
+							<div class="col text-center border-start border-dark-subtle">
 								3
 							</div>
-							<div class="col text-center">4</div>
-							<div
-								class="col text-center border-start border-end border-dark-subtle"
-							>
+							<div class="col text-center border-start border-dark-subtle">
+								4
+							</div>
+							<div class="col text-center border-start border-dark-subtle">
 								5
 							</div>
-							<div class="col text-center">6</div>
-							<div
-								class="col text-center border-start border-end border-dark-subtle"
-							>
+							<div class="col text-center border-start border-dark-subtle">
+								6
+							</div>
+							<div class="col text-center border-start border-dark-subtle">
 								7
 							</div>
-							<div class="col text-center">8</div>
-							<div
-								class="col text-center border-start border-end border-dark-subtle"
-							>
+							<div class="col text-center border-start border-dark-subtle">
+								8
+							</div>
+							<div class="col text-center border-start border-dark-subtle">
 								9
 							</div>
-							<div class="col text-center">10</div>
 							<div
-								class="col text-center border-start border-end border-dark-subtle"
+								class="col text-center border-start border-dark-subtle scoreboard-inning"
+							>
+								10
+							</div>
+							<div
+								class="col text-center border-start border-dark-subtle scoreboard-inning"
 							>
 								11
 							</div>
-							<div class="col text-center">12</div>
+							<div
+								class="col text-center border-start border-dark-subtle scoreboard-inning"
+							>
+								12
+							</div>
 							<div
 								id="extra-innings-header"
 								class="col text-center border-start border-dark-subtle"
@@ -161,7 +172,99 @@
 							<div class="col text-center"></div>
 						</div>
 					</div>
-					<div id="lineup-visitor"></div>
+					<div class="spacer"></div>
+					<div
+						id="lineup-visitor"
+						class="container border border-black border-2 cursor"
+						title="Drag visitor's lineup to a new location on the scoresheet"
+					>
+						<div class="row header-row bg-dark-subtle">
+							<div class="col-2 border-end border-2 border-black">
+								VISITOR TEAM
+							</div>
+							<div class="col-2 p-0">
+								<div class="row mx-0">
+									<div
+										class="col-2 p-0 text-center border-end border-2 border-black"
+									>
+										POS
+									</div>
+									<div class="col-10 p-0">
+										<div class="row m-0">
+											<div class="col p-0 text-center">RNG</div>
+											<div
+												class="col p-0 text-center border-start border-end border-1 border-dark-subtle"
+											>
+												ERR
+											</div>
+											<div
+												class="col p-0 text-center border-end border-1 border-dark-subtle"
+											>
+												ARM
+											</div>
+											<div
+												class="col p-0 text-center border-2 border-end border-black"
+											>
+												RUN
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-8">
+								<div class="row">
+									<div class="col p-0 text-center">1</div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									>
+										2
+									</div>
+									<div class="col p-0 text-center">3</div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									>
+										4
+									</div>
+									<div class="col p-0 text-center">5</div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									>
+										6
+									</div>
+									<div class="col p-0 text-center">7</div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									>
+										8
+									</div>
+									<div class="col p-0 text-center">9</div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									>
+										10
+									</div>
+									<div class="col p-0 text-center">11</div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									>
+										12
+									</div>
+									<div class="col p-0 text-center">13</div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									>
+										14
+									</div>
+									<div class="col p-0 text-center">15</div>
+									<div
+										class="col p-0 text-center border-start border-dark-subtle"
+									>
+										16
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div id="lineup-home"></div>
 					<div id="pitchers-side-by-side"></div>
 					<!-- Below are hidden unless selected in options to be shown, then the above is hidden-->
@@ -300,6 +403,18 @@
 								data-bs-parent="#accordionExample"
 							>
 								<div class="accordion-body text-bg-light">
+									<label class="h6" for="select-player-names"
+										>Player Names</label
+									>
+									<select
+										id="select-player-names"
+										class="form-select"
+										aria-label="Default select example"
+									>
+										<option selected value="first-last">First Last</option>
+										<option value="f-last">F. Last</option>
+										<option value="Last">Last</option>
+									</select>
 									<div class="form-check my-3">
 										<input
 											type="checkbox"
@@ -448,18 +563,6 @@
 									<div class="text-small text-center mb-2">
 										(Drag slider to set opacity)
 									</div>
-									<label class="h6" for="select-player-names"
-										>Player Names</label
-									>
-									<select
-										id="select-player-names"
-										class="form-select"
-										aria-label="Default select example"
-									>
-										<option selected value="first-last">First Last</option>
-										<option value="f-last">F. Last</option>
-										<option value="Last">Last</option>
-									</select>
 								</div>
 							</div>
 						</div>
