@@ -26,7 +26,73 @@
 	<body>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-9"></div>
+				<div class="col-9">
+					<div id="scoreboard" class="container">
+						<div class="row">
+							<div class="col-4 text-center">04-01-2024</div>
+							<div class="col text-center">1</div>
+							<div class="col text-center">3</div>
+							<div class="col text-center">2</div>
+							<div class="col text-center">4</div>
+							<div class="col text-center">5</div>
+							<div class="col text-center">6</div>
+							<div class="col text-center">7</div>
+							<div class="col text-center">8</div>
+							<div class="col text-center">9</div>
+							<div class="col text-center">10</div>
+							<div class="col text-center">11</div>
+							<div class="col text-center">12</div>
+							<div id="extra-innings-header" class="col text-center">X</div>
+							<div class="col text-center">R</div>
+							<div class="col text-center">H</div>
+							<div class="col text-center">E</div>
+						</div>
+						<div class="row">
+							<div class="col-4 text-center">LOS ANGELES ANGELS</div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div id="extra-innings-visitors" class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+						</div>
+						<div class="row">
+							<div class="col-4 text-center">TEXAS RANGERS</div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div id="extra-innings-home" class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+							<div class="col text-center"></div>
+						</div>
+					</div>
+					<div id="lineup-visitor"></div>
+					<div id="lineup-home"></div>
+					<div id="pitchers-side-by-side"></div>
+					<!-- Below are hidden unless selected in options to be shown, then the above is hidden-->
+					<div id="pitchers-visitor"></div>
+					<div id="pitchers-home"></div>
+				</div>
 				<div class="col-3">
 					<div class="accordion" id="accordionExample">
 						<div class="accordion-item">
@@ -120,8 +186,8 @@
 										<option value="10">10</option>
 										<option value="11">11</option>
 										<option value="12">12</option>
-										<option value="13">13</option>
-										<option value="14">14</option>
+										<!-- <option value="13">13</option>
+										<option value="14">14</option> -->
 									</select>
 									<div class="form-check mt-3">
 										<input
