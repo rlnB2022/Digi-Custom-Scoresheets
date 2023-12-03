@@ -9,12 +9,10 @@ body {
 	width: 100vw;
 }
 
-.custom-container {
-	display: flex;
-	.scoresheet-container {
-		flex: 8;
-	}
-	.options {
-		flex: 2;
-	}
+.text-small {
+	font-size: 0.8rem;
+}
+
+.cursor {
+	cursor: pointer;
 }

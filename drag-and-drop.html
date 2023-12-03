@@ -5,169 +5,342 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		/>
+		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 			rel="stylesheet"
 			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 			crossorigin="anonymous"
 		/>
+		<link rel="stylesheet" href="css/custom-drag-and-drop.min.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Roboto&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="css/custom-drag-and-drop.min.css" />
 		<title>DigiDugout - Custom Scoresheet</title>
 	</head>
 	<body>
-		<div class="custom-container">
-			<div class="scoresheet-container"></div>
-			<div class="options">
-				<div class="accordion" id="accordionExample">
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button
-								class="accordion-button"
-								type="button"
-								data-bs-toggle="collapse"
-								data-bs-target="#collapseOne"
-								aria-expanded="true"
-								aria-controls="collapseOne"
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-9"></div>
+				<div class="col-3">
+					<div class="accordion" id="accordionExample">
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseOne"
+									aria-expanded="true"
+									aria-controls="collapseOne"
+								>
+									Global
+								</button>
+							</h2>
+							<div
+								id="collapseOne"
+								class="accordion-collapse collapse show"
+								data-bs-parent="#accordionExample"
 							>
-								Global
-							</button>
-						</h2>
-						<div
-							id="collapseOne"
-							class="accordion-collapse collapse show"
-							data-bs-parent="#accordionExample"
-						>
-							<div class="accordion-body">
-								<label for="select-font-style">Font style</label>
-								<select
-									id="select-font-style"
-									class="form-select"
-									aria-label="Default select example"
-								>
-									<option selected value="normal">Normal</option>
-									<option value="roboto">Roboto</option>
-									<option value="montserrat">Montserrat</option>
-								</select>
-								<label for="select-font-size">Font size</label>
-								<select
-									id="select-font-size"
-									class="form-select"
-									aria-label="Default select example"
-								>
-									<option value=".6rem">Small</option>
-									<option selected value=".75rem">Normal</option>
-									<option value="1rem">Large</option>
-								</select>
-								<label for="select-heading-font-weight"
-									>Heading Font Weight</label
-								>
-								<select
-									id="select-heading-font-weight"
-									class="form-select"
-									aria-label="Default select example"
-								>
-									<option value="1">Thin</option>
-									<option selected value="2">Normal</option>
-									<option value="3">Thick</option>
-								</select>
+								<div class="accordion-body text-bg-light">
+									<label class="h6" for="select-font-style">Font Style</label>
+									<select
+										id="select-font-style"
+										class="form-select"
+										aria-label="Default select example"
+									>
+										<option selected value="normal">Normal</option>
+										<option value="roboto">Roboto</option>
+										<option value="montserrat">Montserrat</option>
+									</select>
+									<label class="h6" for="select-font-size">Font Size</label>
+									<select
+										id="select-font-size"
+										class="form-select"
+										aria-label="Default select example"
+									>
+										<option value=".6rem">Small</option>
+										<option selected value=".75rem">Normal</option>
+										<option value="1rem">Large</option>
+									</select>
+									<label class="h6" for="select-heading-font-weight"
+										>Heading Font Weight</label
+									>
+									<select
+										id="select-heading-font-weight"
+										class="form-select"
+										aria-label="Default select example"
+									>
+										<option selected value="1">Thin</option>
+										<option value="2">Thick</option>
+									</select>
+									<label class="h6" for="select-borders">Borders</label>
+									<select
+										id="select-borders"
+										class="form-select"
+										aria-label="Default select example"
+									>
+										<option selected value="1">Thin</option>
+										<option value="2">Thick</option>
+									</select>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button
-								class="accordion-button collapsed"
-								type="button"
-								data-bs-toggle="collapse"
-								data-bs-target="#collapseTwo"
-								aria-expanded="false"
-								aria-controls="collapseTwo"
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseTwo"
+									aria-expanded="false"
+									aria-controls="collapseTwo"
+								>
+									Scoreboard
+								</button>
+							</h2>
+							<div
+								id="collapseTwo"
+								class="accordion-collapse collapse"
+								data-bs-parent="#accordionExample"
 							>
-								Scoreboard
-							</button>
-						</h2>
-						<div
-							id="collapseTwo"
-							class="accordion-collapse collapse"
-							data-bs-parent="#accordionExample"
-						>
-							<div class="accordion-body">
-								<strong>This is the second item's accordion body.</strong> It is
-								hidden by default, until the collapse plugin adds the
-								appropriate classes that we use to style each element. These
-								classes control the overall appearance, as well as the showing
-								and hiding via CSS transitions. You can modify any of this with
-								custom CSS or overriding our default variables. It's also worth
-								noting that just about any HTML can go within the
-								<code>.accordion-body</code>, though the transition does limit
-								overflow.
+								<div class="accordion-body text-bg-light">
+									<label class="h6" for="select-innings">Innings</label>
+									<select
+										id="select-innings"
+										class="form-select"
+										aria-label="Default select example"
+									>
+										<option selected value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+									</select>
+									<div class="form-check mt-3">
+										<input
+											type="checkbox"
+											class="form-check-input"
+											role="switch"
+											id="extraInningsSwitch"
+										/>
+										<label
+											class="h6"
+											for="extraInningsSwitch"
+											class="form-check-label"
+											>Display Extra Innings column</label
+										>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button
-								class="accordion-button collapsed"
-								type="button"
-								data-bs-toggle="collapse"
-								data-bs-target="#collapseThree"
-								aria-expanded="false"
-								aria-controls="collapseThree"
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseThree"
+									aria-expanded="false"
+									aria-controls="collapseThree"
+								>
+									Lineups
+								</button>
+							</h2>
+							<div
+								id="collapseThree"
+								class="accordion-collapse collapse"
+								data-bs-parent="#accordionExample"
 							>
-								Lineups
-							</button>
-						</h2>
-						<div
-							id="collapseThree"
-							class="accordion-collapse collapse"
-							data-bs-parent="#accordionExample"
-						>
-							<div class="accordion-body">
-								<strong>This is the third item's accordion body.</strong> It is
-								hidden by default, until the collapse plugin adds the
-								appropriate classes that we use to style each element. These
-								classes control the overall appearance, as well as the showing
-								and hiding via CSS transitions. You can modify any of this with
-								custom CSS or overriding our default variables. It's also worth
-								noting that just about any HTML can go within the
-								<code>.accordion-body</code>, though the transition does limit
-								overflow.
+								<div class="accordion-body text-bg-light">
+									<div class="form-check my-3">
+										<input
+											type="checkbox"
+											class="form-check-input"
+											role="switch"
+											id="checkbox-numbered-lineups"
+										/>
+										<label
+											class="h6"
+											for="checkbox-numbered-lineups"
+											class="form-check-label"
+											>Numbered Lineups</label
+										>
+									</div>
+									<label class="h6" for="select-innings">Positions</label>
+									<select
+										id="select-positions"
+										class="form-select"
+										aria-label="Default select example"
+									>
+										<option selected value="letters">Letters</option>
+										<option value="numbers">Numbers</option>
+									</select>
+									<div class="form-check mt-3 mb-1">
+										<input
+											checked
+											type="checkbox"
+											class="form-check-input"
+											role="switch"
+											id="ratings-boxes"
+										/>
+										<label
+											class="h6"
+											for="ratings-boxes"
+											class="form-check-label"
+											>Use Ratings Boxes</label
+										>
+									</div>
+									<div
+										class="container p-2 border border-1 border-light-subtle rounded"
+									>
+										<div class="row mx-0 gx-2">
+											<div class="col cursor">
+												<div
+													class="rating-one-value user-select-none border p-2 rounded"
+												>
+													RNG
+												</div>
+												<input
+													type="text"
+													name="rating-one"
+													id="rating-one"
+													value="RNG"
+													class="d-none"
+												/>
+											</div>
+											<div class="col cursor">
+												<div
+													class="rating-two-value user-select-none border p-2 rounded"
+												>
+													ERR
+												</div>
+												<input
+													type="text"
+													name="rating-two"
+													id="rating-two"
+													value="ERR"
+													class="d-none"
+												/>
+											</div>
+											<div class="col cursor">
+												<div
+													class="rating-three-value user-select-none border p-2 rounded"
+												>
+													ARM
+												</div>
+												<input
+													type="text"
+													name="rating-three"
+													id="rating-three"
+													value="ARM"
+													class="d-none"
+												/>
+											</div>
+											<div class="col cursor">
+												<div
+													class="rating-four-value user-select-none border p-2 rounded"
+												>
+													RUN
+												</div>
+												<input
+													type="text"
+													name="rating-four"
+													id="rating-four"
+													value="RUN"
+													class="d-none"
+												/>
+											</div>
+											<div
+												class="col d-flex align-items-center justify-content-center p-2"
+											>
+												<i class="fa-solid fa-trash-can"></i>
+											</div>
+										</div>
+									</div>
+									<div class="text-small text-center mb-2">
+										(Drag/Drop to re-order or delete - click to change text)
+									</div>
+									<label class="h6" for="select-batter-subs">Batter Subs</label>
+									<select
+										id="select-batter-subs"
+										class="form-select"
+										aria-label="Default select example"
+									>
+										<option selected value="1">1</option>
+										<option value="2">2</option>
+									</select>
+									<div class="form-check mt-3">
+										<input
+											checked
+											type="checkbox"
+											class="form-check-input"
+											role="switch"
+											id="checkboxDiamonds"
+										/>
+										<label
+											class="h6"
+											for="checkboxDiamonds"
+											class="form-check-label"
+											>Display Diamonds</label
+										>
+									</div>
+									<div class="row">
+										<div class="col-10">
+											<input
+												type="range"
+												class="form-range"
+												id="diamondOpacity"
+												max="100"
+												min="0"
+												value="100"
+											/>
+										</div>
+										<div class="col-2 diamond-opacity-value">100%</div>
+									</div>
+									<div class="text-small text-center mb-2">
+										(Drag slider to set opacity)
+									</div>
+									<label class="h6" for="select-player-names"
+										>Player Names</label
+									>
+									<select
+										id="select-player-names"
+										class="form-select"
+										aria-label="Default select example"
+									>
+										<option selected value="first-last">First Last</option>
+										<option value="f-last">F. Last</option>
+										<option value="Last">Last</option>
+									</select>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button
-								class="accordion-button collapsed"
-								type="button"
-								data-bs-toggle="collapse"
-								data-bs-target="#collapseFour"
-								aria-expanded="false"
-								aria-controls="collapseFour"
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button
+									class="accordion-button collapsed"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapseFour"
+									aria-expanded="false"
+									aria-controls="collapseFour"
+								>
+									Pitchers
+								</button>
+							</h2>
+							<div
+								id="collapseFour"
+								class="accordion-collapse collapse"
+								data-bs-parent="#accordionExample"
 							>
-								Pitchers
-							</button>
-						</h2>
-						<div
-							id="collapseFour"
-							class="accordion-collapse collapse"
-							data-bs-parent="#accordionExample"
-						>
-							<div class="accordion-body">
-								<strong>This is the third item's accordion body.</strong> It is
-								hidden by default, until the collapse plugin adds the
-								appropriate classes that we use to style each element. These
-								classes control the overall appearance, as well as the showing
-								and hiding via CSS transitions. You can modify any of this with
-								custom CSS or overriding our default variables. It's also worth
-								noting that just about any HTML can go within the
-								<code>.accordion-body</code>, though the transition does limit
-								overflow.
+								<div class="accordion-body text-bg-light"></div>
 							</div>
 						</div>
 					</div>
