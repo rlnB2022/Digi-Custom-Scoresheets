@@ -16,3 +16,10 @@ body {
 .cursor {
 	cursor: pointer;
 }
+
+#scoreboard {
+	/* To indicate that the scoreboard can be dragged */
+	&:hover {
+		border-color: red !important;
+	}
+}
