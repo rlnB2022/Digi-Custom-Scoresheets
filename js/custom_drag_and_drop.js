@@ -26,6 +26,12 @@ const setupScoreSheet = () => {
 const showScoreboardInnings = (innings) => {
 	const scoreboardInningElements =
 		document.querySelectorAll(".scoreboard-inning");
+	const scoreboardVisitorInningElements = document.querySelectorAll(
+		".scoreboard-visitor-inning"
+	);
+	const scoreboardHomeInningElements = document.querySelectorAll(
+		".scoreboard-home-inning"
+	);
 	scoreboardInningElements.forEach((el, index) => {
 		if (index + 1 + 9 > innings) {
 			el.classList.add("d-none");
@@ -33,6 +39,22 @@ const showScoreboardInnings = (innings) => {
 			el.classList.remove("d-none");
 		}
 	});
+	scoreboardVisitorInningElements.forEach((el, index) => {
+		if (index + 1 + 9 > innings) {
+			el.classList.add("d-none");
+		} else {
+			el.classList.remove("d-none");
+		}
+	});
+	scoreboardHomeInningElements.forEach((el, index) => {
+		if (index + 1 + 9 > innings) {
+			el.classList.add("d-none");
+		} else {
+			el.classList.remove("d-none");
+		}
+	});
+
+	/* Also, add/remove innings from each of visitor/home lineups */
 };
 
 setupListeners();
