@@ -199,7 +199,9 @@
 						class="container border border-black border-2 cursor"
 						title="Drag visitor's lineup to a new location on the scoresheet"
 					>
-						<div class="row header-row bg-dark-subtle">
+						<div
+							class="row header-row bg-dark-subtle border-bottom border-2 border-black"
+						>
 							<div class="col-2 border-end border-2 border-black">
 								VISITOR TEAM
 							</div>
@@ -246,7 +248,7 @@
 										3
 									</div>
 									<div
-										class="col p-0 text-center border-start border-dark-subtle"
+										class="col p-0 text-center border-start border-end border-dark-subtle"
 									>
 										4
 									</div>
@@ -289,6 +291,70 @@
 								</div>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-2 border-end border-2 border-black"></div>
+							<div class="col-2 p-0">
+								<div class="row mx-0">
+									<div
+										class="col-2 p-0 text-center border-end border-2 border-black"
+									></div>
+									<div class="col-10 p-0">
+										<div class="row m-0">
+											<div class="col p-0 text-center">&nbsp;</div>
+											<div
+												class="col p-0 text-center border-start border-end border-1 border-dark-subtle"
+											></div>
+											<div
+												class="col p-0 text-center border-end border-1 border-dark-subtle"
+											></div>
+											<div
+												class="col p-0 text-center border-2 border-end border-black"
+											></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-8">
+								<div class="row">
+									<div class="col p-0 text-center">&nbsp;</div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									></div>
+									<div
+										class="col p-0 text-center border-start border-dark-subtle"
+									></div>
+									<div
+										class="col p-0 text-center border-start border-dark-subtle"
+									></div>
+									<div
+										class="col p-0 text-center border-start border-dark-subtle"
+									></div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									></div>
+									<div class="col p-0 text-center"></div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									></div>
+									<div class="col p-0 text-center"></div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									></div>
+									<div class="col p-0 text-center"></div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle"
+									></div>
+									<div class="col p-0 text-center"></div>
+									<div
+										class="col p-0 text-center border-start border-end border-dark-subtle lineup-inning"
+									></div>
+									<div class="col p-0 text-center lineup-inning"></div>
+									<div
+										class="col p-0 text-center border-start border-dark-subtle lineup-inning"
+									></div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div id="lineup-home"></div>
 					<div id="pitchers-side-by-side"></div>
@@ -317,7 +383,9 @@
 								data-bs-parent="#accordionExample"
 							>
 								<div class="accordion-body text-bg-light">
-									<label class="h6" for="select-font-style">Font Style</label>
+									<label class="h6 form-check-label" for="select-font-style"
+										>Font Style</label
+									>
 									<select
 										id="select-font-style"
 										class="form-select"
@@ -399,10 +467,7 @@
 											role="switch"
 											id="extraInningsSwitch"
 										/>
-										<label
-											class="h6"
-											for="extraInningsSwitch"
-											class="form-check-label"
+										<label class="h6 form-check-label" for="extraInningsSwitch"
 											>Display Extra Innings column</label
 										>
 									</div>
@@ -448,9 +513,8 @@
 											id="checkbox-numbered-lineups"
 										/>
 										<label
-											class="h6"
+											class="h6 form-check-label"
 											for="checkbox-numbered-lineups"
-											class="form-check-label"
 											>Numbered Lineups</label
 										>
 									</div>
@@ -471,10 +535,7 @@
 											role="switch"
 											id="ratings-boxes"
 										/>
-										<label
-											class="h6"
-											for="ratings-boxes"
-											class="form-check-label"
+										<label class="h6 form-check-label" for="ratings-boxes"
 											>Use Ratings Boxes</label
 										>
 									</div>
@@ -565,10 +626,7 @@
 											role="switch"
 											id="checkboxDiamonds"
 										/>
-										<label
-											class="h6"
-											for="checkboxDiamonds"
-											class="form-check-label"
+										<label class="h6 form-check-label" for="checkboxDiamonds"
 											>Display Diamonds</label
 										>
 									</div>
