@@ -69,6 +69,18 @@ const setupListeners = () => {
 	displayDiamondsElem.addEventListener("change", function () {
 		localStorage.setItem("displayDiamonds", this.checked ? "show" : "hide");
 	});
+
+	/* Pitcher Subs */
+	const pitcherSubsElem = document.getElementById("select-pitcher-subs");
+	pitcherSubsElem.addEventListener("change", function () {
+		localStorage.setItem("pitcherSubs", this.value);
+	});
+
+	/* Pitcher Section */
+	const pitcherSectionElem = document.getElementById("select-pitcher-section");
+	pitcherSectionElem.addEventListener("change", function () {
+		localStorage.setItem("pitcherSection", this.value);
+	});
 };
 
 const setupScoreSheet = () => {
