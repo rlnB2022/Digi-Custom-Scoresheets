@@ -11,6 +11,18 @@ const setupListeners = () => {
 		localStorage.setItem("fontsize", this.value);
 	});
 
+	/* FONT WEIGHT */
+	const fontSizeWeight = document.getElementById("select-font-weight");
+	fontSizeWeight.addEventListener("change", function () {
+		localStorage.setItem("fontweight", this.value);
+	});
+
+	/* BORDERS */
+	const bordersElem = document.getElementById("select-borders");
+	bordersElem.addEventListener("change", function () {
+		localStorage.setItem("borders", this.value);
+	});
+
 	/* Select Innings */
 	const selectInnings = document.getElementById("select-innings");
 	selectInnings.addEventListener("change", function () {
@@ -23,13 +35,39 @@ const setupListeners = () => {
 		document.getElementById("extraInningsSwitch");
 
 	checkboxShowExtraInnings.addEventListener("change", function () {
-		if (this.checked) {
-			localStorage.setItem("extraInnings", "show");
-		} else {
-			localStorage.setItem("extraInnings", "hide");
-		}
+		localStorage.setItem("extraInnings", this.checked ? "show" : "hide");
 
 		showScoreboardInnings(localStorage.getItem("innings"));
+	});
+
+	/* Player Names */
+	const playerNames = document.getElementById("select-player-names");
+	playerNames.addEventListener("change", function () {
+		localStorage.setItem("playerNames", this.value);
+	});
+
+	/* Numbered Lineups */
+	const numberedLineups = document.getElementById("checkbox-numbered-lineups");
+	numberedLineups.addEventListener("change", function () {
+		localStorage.setItem("numberedLineups", this.checked ? "show" : "hide");
+	});
+
+	/* Player Positions */
+	const playerPositionsElem = document.getElementById("select-positions");
+	playerPositionsElem.addEventListener("change", function () {
+		localStorage.setItem("playerPositions", this.value);
+	});
+
+	/* Use Ratings Boxes */
+	const ratingsBoxElem = document.getElementById("ratings-boxes");
+	ratingsBoxElem.addEventListener("change", function () {
+		localStorage.setItem("ratingsBoxes", this.checked ? "show" : "hide");
+	});
+
+	/* Display Diamonds */
+	const displayDiamondsElem = document.getElementById("checkboxDiamonds");
+	displayDiamondsElem.addEventListener("change", function () {
+		localStorage.setItem("displayDiamonds", this.checked ? "show" : "hide");
 	});
 };
 
@@ -44,18 +82,74 @@ const setupScoreSheet = () => {
 	const fontSizeElement = document.getElementById("select-font-size");
 	fontSizeElement.value = font_size;
 
-	// get data from localStorage or set to 9 if not found
-	let scoreboard_innings = localStorage.getItem("innings") || 9;
+	/* FONT WEIGHT */
+	let font_weight = localStorage.getItem("fontweight") || 1;
+	const fontSizeWeight = document.getElementById("select-font-weight");
+	fontSizeWeight.value = font_weight;
 
-	// set dropdown to number of innings
+	/* BORDERS */
+	let borders = localStorage.getItem("borders") || 1;
+	const bordersElem = document.getElementById("select-borders");
+	bordersElem.value = borders;
+
+	/* INNINGS - NUMBER OF INNINGS */
+	let scoreboard_innings = localStorage.getItem("innings") || 9;
 	const selectInnings = document.getElementById("select-innings");
 	selectInnings.value = scoreboard_innings;
 
 	// show Extra Innings
-	let extraInnings = localStorage.getItem("extraInnings");
+	let extraInnings = localStorage.getItem("extraInnings") || "hide";
 	const checkboxShowExtraInnings =
 		document.getElementById("extraInningsSwitch");
-	checkboxShowExtraInnings.checked = extraInnings;
+	checkboxShowExtraInnings.checked = extraInnings === "show";
+
+	/* LINEUPS - PLAYER NAMES */
+	let playerNames = localStorage.getItem("playerNames") || "first-last";
+	const playerNamesElem = document.getElementById("select-player-names");
+	playerNamesElem.value = playerNames;
+
+	/* LINEUPS - NUMBERED LINEUPS CHECKBOX */
+	let numberedLineups = localStorage.getItem("numberedLineups") || "hide";
+	const numberedLineupsElem = document.getElementById(
+		"checkbox-numbered-lineups"
+	);
+	numberedLineupsElem.checked = numberedLineups === "show";
+
+	/* LINEUPS - POSITIONS */
+	let playerPositions = localStorage.getItem("playerPositions") || "letters";
+	const playerPositionsElem = document.getElementById("select-positions");
+	playerPositionsElem.value = playerPositions;
+
+	/* LINEUPS - USE RATINGS BOXES */
+	let ratingsBox = localStorage.getItem("ratingsBoxes") || "show";
+	const ratingsBoxElem = document.getElementById("ratings-boxes");
+	ratingsBoxElem.checked = ratingsBox === "show";
+
+	/* LINEUPS - RATING NAMES */
+	/* @TODO */
+
+	/* LINEUPS - DISPLAY DIAMONDS CHECKBOX */
+	let displayDiamonds = localStorage.getItem("displayDiamonds") || "hide";
+	const displayDiamondsElem = document.getElementById("checkboxDiamonds");
+	displayDiamondsElem.checked = displayDiamonds === "show";
+
+	/* LINEUPS - DIAMONDS OPACITY SLIDER */
+	let diamondOpacity = localStorage.getItem("diamondOpacity") || "50";
+	const diamondOpacityElem = document.getElementById("diamondOpacity");
+	diamondOpacityElem.value = diamondOpacity;
+
+	const diamondOpacityLabel = document.getElementById("diamond-opacity-label");
+	diamondOpacityLabel.textContent = diamondOpacity + "%";
+
+	/* PITCHERS - PITCHER SUBS */
+	let pitcherSubs = localStorage.getItem("pitcherSubs") || "3";
+	const pitcherSubsElem = document.getElementById("select-pitcher-subs");
+	pitcherSubsElem.value = pitcherSubs;
+
+	/* PITCHERS - PITCHER SECTION */
+	let pitcherSection = localStorage.getItem("pitcherSection") || "side-by-side";
+	const pitcherSectionElem = document.getElementById("select-pitcher-section");
+	pitcherSectionElem.value = pitcherSection;
 
 	// show total number of innings
 	showScoreboardInnings(scoreboard_innings);
