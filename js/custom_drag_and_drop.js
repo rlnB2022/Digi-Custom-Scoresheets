@@ -68,6 +68,27 @@ const setupListeners = () => {
 	const displayDiamondsElem = document.getElementById("checkboxDiamonds");
 	displayDiamondsElem.addEventListener("change", function () {
 		localStorage.setItem("displayDiamonds", this.checked ? "show" : "hide");
+		const diamondOpacityContainer = document.getElementById(
+			"diamond-opacity-container"
+		);
+		if (this.checked) {
+			diamondOpacityContainer.classList.remove("d-none");
+		} else {
+			diamondOpacityContainer.classList.add("d-none");
+		}
+	});
+
+	/* Diamond slider */
+	const diamondOpacityElem = document.getElementById("diamondOpacity");
+	const opacityLabel = document.getElementById("diamond-opacity-label");
+
+	diamondOpacityElem.addEventListener("input", function () {
+		opacityLabel.textContent = this.value + "%";
+	});
+
+	diamondOpacityElem.addEventListener("change", function () {
+		const diamondOpacityElem = document.getElementById("diamondOpacity");
+		localStorage.setItem("diamondOpacity", this.value);
 	});
 
 	/* Pitcher Subs */
@@ -144,6 +165,15 @@ const setupScoreSheet = () => {
 	let displayDiamonds = localStorage.getItem("displayDiamonds") || "hide";
 	const displayDiamondsElem = document.getElementById("checkboxDiamonds");
 	displayDiamondsElem.checked = displayDiamonds === "show";
+
+	const diamondOpacityContainer = document.getElementById(
+		"diamond-opacity-container"
+	);
+	if (displayDiamonds === "show") {
+		diamondOpacityContainer.classList.remove("d-none");
+	} else {
+		diamondOpacityContainer.classList.add("d-none");
+	}
 
 	/* LINEUPS - DIAMONDS OPACITY SLIDER */
 	let diamondOpacity = localStorage.getItem("diamondOpacity") || "50";
