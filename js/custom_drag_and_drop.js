@@ -1,8 +1,21 @@
 const setupListeners = () => {
+	/* FONT STYLE */
+	const selectFontStyle = document.getElementById("select-font-style");
+	selectFontStyle.addEventListener("change", function () {
+		localStorage.setItem("fontstyle", this.value);
+	});
+
+	/* FONT SIZE */
+	const selectFontSize = document.getElementById("select-font-size");
+	selectFontSize.addEventListener("change", function () {
+		localStorage.setItem("fontsize", this.value);
+	});
+
+	/* Select Innings */
 	const selectInnings = document.getElementById("select-innings");
-	selectInnings.addEventListener("change", (e) => {
-		localStorage.setItem("innings", e.target.value);
-		showScoreboardInnings(e.target.value);
+	selectInnings.addEventListener("change", function () {
+		localStorage.setItem("innings", this.value);
+		showScoreboardInnings(this.value);
 	});
 
 	// show Extra Innings
@@ -21,6 +34,16 @@ const setupListeners = () => {
 };
 
 const setupScoreSheet = () => {
+	/* FONT STYLE */
+	let font_style = localStorage.getItem("fontstyle") || "normal";
+	const fontStyleElement = document.getElementById("select-font-style");
+	fontStyleElement.value = font_style;
+
+	/* FONT SIZE */
+	let font_size = localStorage.getItem("fontsize") || ".75rem";
+	const fontSizeElement = document.getElementById("select-font-size");
+	fontSizeElement.value = font_size;
+
 	// get data from localStorage or set to 9 if not found
 	let scoreboard_innings = localStorage.getItem("innings") || 9;
 
