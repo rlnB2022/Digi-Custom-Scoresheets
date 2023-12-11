@@ -1,8 +1,11 @@
+import { players } from "./players.js";
+
 const setupListeners = () => {
 	/* FONT STYLE */
 	const selectFontStyle = document.getElementById("select-font-style");
 	selectFontStyle.addEventListener("change", function () {
 		localStorage.setItem("fontstyle", this.value);
+		changeFontStyle();
 	});
 
 	/* FONT SIZE */
@@ -28,6 +31,7 @@ const setupListeners = () => {
 	selectInnings.addEventListener("change", function () {
 		localStorage.setItem("innings", this.value);
 		showScoreboardInnings(this.value);
+		adjustTeamInnings();
 	});
 
 	// show Extra Innings
@@ -239,6 +243,23 @@ const showScoreboardInnings = (innings) => {
 	});
 
 	/* Also, add/remove innings from each of visitor/home lineups */
+};
+
+const changeFontStyle = () => {};
+
+/**
+ * Make sure the innings available match up with the vertical lines in the scoreboard
+ */
+const adjustTeamInnings = () => {
+	// get the number of innings
+	const innings = parseInt(localStorage.getItem("innings"));
+	// if extra innings, add one
+	const xtraInnings = localStorage.getItem("extraInnings") === "show" ? 1 : 0;
+
+	innings + 3 + xtraInnings;
+
+	const lineupInnings = document.querySelectorAll(".lineup-inning");
+	console.log(lineupInnings.length);
 };
 
 setupListeners();
